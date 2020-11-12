@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,8 @@ Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
 Route::get('/about','App\Http\Controllers\HomeController@about')->name('about');
 
 Route::resource('/posts','App\Http\Controllers\PostController');
+
+Auth::routes();
+
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/dashboard', 'App\Http\Controllers\HomeController@dashboard')->name('dashboard');
