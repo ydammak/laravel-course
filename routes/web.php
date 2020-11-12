@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 */
 //Route::get('/posts/{id}/{author?}','App\Http\Controllers\HomeController@blog')->name('blog-post');
 
+Route::get('/', function(){
+    return view('welcome');
+});
 Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
 
 Route::get('/about','App\Http\Controllers\HomeController@about')->name('about');
